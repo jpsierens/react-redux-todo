@@ -8,7 +8,10 @@ const TodoList = ({ todos, onTodoClick, onDeleteClick }) => (
         key={todo.id}
         {...todo}
         onClick={() => onTodoClick(todo.id)}
-        onDeleteClick={() => onDeleteClick(todo.id)}
+        onDeleteClick={(e) => {
+          e.stopPropagation()
+          onDeleteClick(todo.id)
+        }}
       />
     )}
   </ul>

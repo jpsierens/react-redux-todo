@@ -31,6 +31,7 @@ const getIndex = (state, action) => {
 }
 
 const todos = (state = [], action) => {
+  console.log(state);
   switch (action.type) {
     case 'ADD_TODO':
       return [
